@@ -9,6 +9,17 @@
 <style>
   /* Optional hover for lightbox images */
   .hover-scale:hover { transform: scale(1.05); transition: transform 0.3s; }
+
+#lightbox-img {
+  transform: scale(0.95);
+  transition: all 0.3s ease-in-out;
+}
+#lightbox.show #lightbox-img {
+  transform: scale(1);
+}
+
+
+
 </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -42,34 +53,49 @@
 
 <!-- Shows -->
 <section id="shows" class="py-16 px-8 bg-gray-50">
-  <h3 class="text-3xl font-bold text-center text-red-600 mb-10">Upcoming Shows (2025-2026)</h3>
-  <div class="max-w-4xl mx-auto space-y-6">
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h4 class="font-bold text-xl">Fête du Théâtre - Show Title</h4>
-        <p class="text-gray-600">Saturday 11th of October @ Salle Saint-Gervais</p>
-      </div>
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h4 class="font-bold text-xl">Show Title</h4>
-        <p class="text-gray-600">Thursday 20th of November @ La Traverse, Maison de Quartier de Paquis</p>
-      </div>
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h4 class="font-bold text-xl">Show Title</h4>
-        <p class="text-gray-600">Friday 28th of November @ Impro Comedy Club</p>
-      </div>
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h4 class="font-bold text-xl">Show Title</h4>
-        <p class="text-gray-600">Thursday 15th of January @ La Traverse, Maison de Quartier de Paquis</p>
-      </div>
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h4 class="font-bold text-xl">Show Title</h4>
-        <p class="text-gray-600">Friday 27th of February @ Impro Comedy Club</p>
-      </div>
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h4 class="font-bold text-xl">Show Title</h4>
-        <p class="text-gray-600">Friday 24th of April @ Impro Comedy Club</p>
-      </div>
+  <h3 class="text-3xl font-bold text-center text-red-600 mb-10">Our Shows in 2025-2026</h3>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    
+    <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+      <h4 class="font-bold text-xl mb-2">Fête du Théâtre - Show Title</h4>
+      <p class="text-gray-700 font-semibold mb-1">Saturday 11th of October</p>
+      <p class="text-gray-500 text-sm">@ Salle Saint-Gervais</p>
     </div>
-  </section>
+
+    <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+      <h4 class="font-bold text-xl mb-2">Show Title</h4>
+      <p class="text-gray-700 font-semibold mb-1">Thursday 20th of November</p>
+      <p class="text-gray-500 text-sm">@ La Traverse, Maison de Quartier de Paquis</p>
+    </div>
+
+    <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+      <h4 class="font-bold text-xl mb-2">Show Title</h4>
+      <p class="text-gray-700 font-semibold mb-1">Friday 28th of November</p>
+      <p class="text-gray-500 text-sm">@ Impro Comedy Club</p>
+    </div>
+
+    <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+      <h4 class="font-bold text-xl mb-2">Show Title</h4>
+      <p class="text-gray-700 font-semibold mb-1">Thursday 15th of January</p>
+      <p class="text-gray-500 text-sm">@ La Traverse, Maison de Quartier de Paquis</p>
+    </div>
+
+    <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+      <h4 class="font-bold text-xl mb-2">Show Title</h4>
+      <p class="text-gray-700 font-semibold mb-1">Friday 27th of February</p>
+      <p class="text-gray-500 text-sm">@ Impro Comedy Club</p>
+    </div>
+
+    <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+      <h4 class="font-bold text-xl mb-2">Show Title</h4>
+      <p class="text-gray-700 font-semibold mb-1">Friday 24th of April</p>
+      <p class="text-gray-500 text-sm">@ Impro Comedy Club</p>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- About Us Section -->
 <section id="about" class="py-20 max-w-7xl mx-auto px-6">
@@ -79,44 +105,51 @@
     Our performances range from traditional improv to immersive theatrical experiences
   </p>
 
-  <div id="members-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-    <!-- Members -->
-    <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
-      <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full mb-4"></div>
-      <h4 class="font-semibold">Christina</h4>
-      <p class="text-sm text-gray-600">Performer</p>
-    </div>
-    <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
-      <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full mb-4"></div>
-      <h4 class="font-semibold">Charlotte</h4>
-      <p class="text-sm text-gray-600">Performer</p>
-    </div>
-    <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
-      <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full mb-4"></div>
-      <h4 class="font-semibold">Ivana</h4>
-      <p class="text-sm text-gray-600">Performer</p>
-    </div>
-    <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
-      <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full mb-4"></div>
-      <h4 class="font-semibold">Arthur</h4>
-      <p class="text-sm text-gray-600">Performer</p>
-    </div>
-    <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
-      <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full mb-4"></div>
-      <h4 class="font-semibold">Emilie</h4>
-      <p class="text-sm text-gray-600">Performer</p>
-    </div>
-    <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
-      <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full mb-4"></div>
-      <h4 class="font-semibold">Margherita</h4>
-      <p class="text-sm text-gray-600">Performer</p>
-    </div>
-    <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
-      <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full mb-4"></div>
-      <h4 class="font-semibold">Fredrik</h4>
-      <p class="text-sm text-gray-600">Performer</p>
-    </div>
+<div id="members-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+  <!-- Members -->
+  <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
+    <img src="img/people/christina.jpg" alt="Christina" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+    <h4 class="font-semibold">Christina</h4>
+    <p class="text-sm text-gray-600">Performer</p>
   </div>
+  
+  <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
+    <img src="img/people/charlotte.jpg" alt="Charlotte" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+    <h4 class="font-semibold">Charlotte</h4>
+    <p class="text-sm text-gray-600">Performer</p>
+  </div>
+  
+  <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
+    <img src="img/people/ivana.jpg" alt="Ivana" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+    <h4 class="font-semibold">Ivana</h4>
+    <p class="text-sm text-gray-600">Performer</p>
+  </div>
+  
+  <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
+    <img src="img/people/arthur.jpg" alt="Arthur" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+    <h4 class="font-semibold">Arthur</h4>
+    <p class="text-sm text-gray-600">Performer</p>
+  </div>
+  
+  <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
+    <img src="img/people/milie.jpg" alt="Emilie" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+    <h4 class="font-semibold">Emilie</h4>
+    <p class="text-sm text-gray-600">Performer</p>
+  </div>
+  
+  <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
+    <img src="img/people/margherita.jpg" alt="Margherita" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+    <h4 class="font-semibold">Margherita</h4>
+    <p class="text-sm text-gray-600">Performer</p>
+  </div>
+  
+  <div class="member bg-gray-100 rounded-lg shadow p-4 text-center">
+    <img src="img/people/fredrik.jpeg" alt="Fredrik" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+    <h4 class="font-semibold">Fredrik</h4>
+    <p class="text-sm text-gray-600">Performer</p>
+  </div>
+</div>
+
 
   <!-- Randomize Members JS -->
   <script>
@@ -134,28 +167,28 @@
 <section id="gallery" class="py-16 px-8">
   <h3 class="text-3xl font-bold text-center text-red-600 mb-10">Gallery</h3>
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-    <a href="img/FDT-2023_murder_mystery_001.jpg" class="gallery-item" data-group="gallery" onclick="openLightbox(event)">
+    <a href="img/FDT-2023_murder_mystery_001.jpg" class="gallery-item" data-group="gallery" data-caption=" Magali Girardin - Fête du Théâtre 2023" onclick="openLightbox(event)">
       <img src="img/FDT-2023_murder_mystery_001.jpg" alt="Photo 1" class="rounded-lg shadow h-40 w-full object-cover hover:scale-105 transition-transform duration-300">
     </a>
-    <a href="img/FDT-2023_murder_mystery_002.jpg" class="gallery-item" data-group="gallery" onclick="openLightbox(event)">
+    <a href="img/FDT-2023_murder_mystery_002.jpg" class="gallery-item" data-group="gallery" data-caption="Magali Girardin - Fête du Théâtre 2023" onclick="openLightbox(event)">
       <img src="img/FDT-2023_murder_mystery_002.jpg" alt="Photo 2" class="rounded-lg shadow h-40 w-full object-cover hover:scale-105 transition-transform duration-300">
     </a>
-    <a href="img/FDT-2023_murder_mystery_004.jpg" class="gallery-item" data-group="gallery" onclick="openLightbox(event)">
+    <a href="img/FDT-2023_murder_mystery_004.jpg" class="gallery-item" data-group="gallery" data-caption="Magali Girardin - Fête du Théâtre 2023" onclick="openLightbox(event)">
       <img src="img/FDT-2023_murder_mystery_004.jpg" alt="Photo 3" class="rounded-lg shadow h-40 w-full object-cover hover:scale-105 transition-transform duration-300">
     </a>
-    <a href="img/FDT-2023_murder_mystery_005.jpg" class="gallery-item" data-group="gallery" onclick="openLightbox(event)">
+    <a href="img/FDT-2023_murder_mystery_005.jpg" class="gallery-item" data-group="gallery" data-caption="Magali Girardin - Fête du Théâtre 2023" onclick="openLightbox(event)">
       <img src="img/FDT-2023_murder_mystery_005.jpg" alt="Photo 4" class="rounded-lg shadow h-40 w-full object-cover hover:scale-105 transition-transform duration-300">
     </a>
-    <a href="img/show_gavroche.jpeg" class="gallery-item" data-group="gallery" onclick="openLightbox(event)">
+    <a href="img/show_gavroche.jpeg" class="gallery-item" data-group="gallery" data-caption="Photo by John Doe" onclick="openLightbox(event)">
       <img src="img/show_gavroche.jpeg" alt="Photo 1" class="rounded-lg shadow h-40 w-full object-cover hover:scale-105 transition-transform duration-300">
     </a>
-    <a href="img/showgervais2024.jpg" class="gallery-item" data-group="gallery" onclick="openLightbox(event)">
+    <a href="img/showgervais2024.jpg" class="gallery-item" data-group="gallery" data-caption="Photo by John Doe" onclick="openLightbox(event)">
       <img src="img/showgervais2024.jpg" alt="Photo 2" class="rounded-lg shadow h-40 w-full object-cover hover:scale-105 transition-transform duration-300">
     </a>
-    <a href="img/prep_mah.jpeg" class="gallery-item" data-group="gallery" onclick="openLightbox(event)">
+    <a href="img/prep_mah.jpeg" class="gallery-item" data-group="gallery" data-caption="Photo by John Doe" onclick="openLightbox(event)">
       <img src="img/prep_mah.jpeg" alt="Photo 3" class="rounded-lg shadow h-40 w-full object-cover hover:scale-105 transition-transform duration-300">
     </a>
-    <a href="img/group_mah.jpeg" class="gallery-item" data-group="gallery" onclick="openLightbox(event)">
+    <a href="img/group_mah.jpeg" class="gallery-item" data-group="gallery" data-caption="Photo by John Doe" onclick="openLightbox(event)">
       <img src="img/group_mah.jpeg" alt="Photo 4" class="rounded-lg shadow h-40 w-full object-cover hover:scale-105 transition-transform duration-300">
     </a>
   </div>
@@ -166,7 +199,7 @@
   <h3 class="text-3xl font-bold text-center text-red-600 mb-10">Past Projects</h3>
   <div class="max-w-5xl mx-auto space-y-6">
     <div class="p-6 bg-white rounded-lg shadow flex flex-col md:flex-row items-start md:items-center gap-4">
-      <a href="img/project_comedie2023.jpg" data-group="projects" onclick="openLightbox(event)">
+      <a href="img/project_comedie2023.jpg" data-group="projects"  data-caption="Photo by John Doe"onclick="openLightbox(event)">
         <img src="img/project_comedie2023.jpg" alt="Cluedo Géant 2023" class="w-32 h-32 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
       </a>
       <div>
@@ -177,7 +210,7 @@
     </div>
      <!-- Project 2: Immersive -->
     <div class="p-6 bg-white rounded-lg shadow flex flex-col md:flex-row items-start md:items-center gap-4">
-      <a href="img/project_MAH.jpeg" data-group="projects" onclick="openLightbox(event)">
+      <a href="img/project_MAH.jpeg" data-group="projects"  data-caption="Photo by John Doe"onclick="openLightbox(event)">
         <img src="img/project_MAH.jpeg" alt="A MAH-tter of Life and Death 2022" class="w-32 h-32 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
       </a>
       <div>
@@ -189,7 +222,7 @@
 
     <!-- Project 3: Immersive -->
     <div class="p-6 bg-white rounded-lg shadow flex flex-col md:flex-row items-start md:items-center gap-4">
-      <a href="img/project_comedie2019.jpg" data-group="projects" onclick="openLightbox(event)">
+      <a href="img/project_comedie2019.jpg" data-group="projects"  data-caption="Photo by John Doe"onclick="openLightbox(event)">
         <img src="img/project_comedie2019.jpg" alt="Cluedo Géant 2019" class="w-32 h-32 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
       </a>
       <div>
@@ -201,7 +234,7 @@
 
         <!-- Project 4: Improv -->
     <div class="p-6 bg-white rounded-lg shadow flex flex-col md:flex-row items-start md:items-center gap-4">
-      <a href="img/project_retreat2023.jpg" data-group="projects" onclick="openLightbox(event)">
+      <a href="img/project_retreat2023.jpg" data-group="projects"  data-caption="Photo by John Doe" onclick="openLightbox(event)">
         <img src="img/project_retreat2023.jpg" alt="Improv Retreat 2023" class="w-32 h-32 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
       </a>
       <div>
@@ -213,7 +246,7 @@
 
     <!-- Project 5: Improv -->
     <div class="p-6 bg-white rounded-lg shadow flex flex-col md:flex-row items-start md:items-center gap-4">
-      <a href="img/project_werewolves2023.jpg" data-group="projects" onclick="openLightbox(event)">
+      <a href="img/project_werewolves2023.jpg" data-group="projects"  data-caption="Photo by John Doe"onclick="openLightbox(event)">
         <img src="img/project_werewolves2023.jpg" alt="Werewolves 2023" class="w-32 h-32 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
       </a>
       <div>
@@ -225,7 +258,7 @@
 
     <!-- Project 5: Improv -->
     <div class="p-6 bg-white rounded-lg shadow flex flex-col md:flex-row items-start md:items-center gap-4">
-      <a href="img/project4_large.jpg" data-group="projects" onclick="openLightbox(event)">
+      <a href="img/project4_large.jpg" data-group="projects"  data-caption="Photo by John Doe" onclick="openLightbox(event)">
         <img src="img/project4_thumb.jpg" alt="Dream 20XX" class="w-32 h-32 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
       </a>
       <div>
@@ -244,81 +277,153 @@
   </div>
 </section>
 
+
+
+
 <!-- Lightbox -->
-<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 flex-col">
-  <span class="absolute top-4 right-6 text-white text-3xl cursor-pointer" onclick="closeLightbox()">&times;</span>
-  <img id="lightbox-img" src="" alt="Enlarged Photo" class="max-h-[80%] max-w-[80%] rounded-lg shadow-lg mb-4">
-  <div class="flex items-center space-x-4">
-    <button class="text-white text-3xl px-4" onclick="prevImage(event)">&#8592;</button>
-    <span id="lightbox-counter" class="text-white text-lg"></span>
-    <button class="text-white text-3xl px-4" onclick="nextImage(event)">&#8594;</button>
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center">
+  
+  <!-- Close button -->
+  <span id="lightbox-close" 
+        class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-red-500 z-50">
+    &times;
+  </span>
+
+  <!-- Content wrapper -->
+  <div id="lightbox-content" 
+       class="relative flex items-center justify-center max-w-screen max-h-screen">
+    
+    <!-- Prev button -->
+    <button onclick="prevImage(event)" 
+      class="absolute left-2 md:left-6 text-white text-4xl bg-black bg-opacity-40 hover:bg-opacity-70 rounded-full p-3 z-40">
+      &#10094;
+    </button>
+
+    <!-- Clickable image (splits left/right) -->
+    <img id="lightbox-img" 
+         src="" 
+         alt="Enlarged Photo" 
+         class="max-h-screen max-w-screen w-auto h-auto object-contain rounded-lg shadow-lg cursor-pointer z-30"
+         onclick="imageClickNav(event)">
+
+    <!-- Next button -->
+    <button onclick="nextImage(event)" 
+      class="absolute right-2 md:right-6 text-white text-4xl bg-black bg-opacity-40 hover:bg-opacity-70 rounded-full p-3 z-40">
+      &#10095;
+    </button>
+
+    <!-- Counter -->
+<div class="absolute bottom-16 text-white text-lg bg-black bg-opacity-50 px-3 py-1 rounded z-40">
+  <span id="lightbox-counter"></span>
+</div>
+
+<!-- Caption -->
+<div id="lightbox-caption" class="absolute bottom-6 text-white text-center bg-black bg-opacity-50 px-3 py-1 rounded z-40 max-w-xl mx-auto left-0 right-0"></div>
+
   </div>
 </div>
 
-<!-- Contact -->
-<section id="contact" class="py-16 px-8 text-center">
-  <h3 class="text-3xl font-bold text-red-600 mb-6">Contact Us</h3>
-  <p>Email: <a href="mailto:contact@themurderet.com" class="text-red-600 font-semibold">contact@themurderet.com</a></p>
-</section>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-gray-300 text-center py-6">
-  <p>© 2025 The Murderet. All Rights Reserved.</p>
-</footer>
 
-<!-- Lightbox JS -->
+
 <script>
 let currentGroup = [];
 let currentIndex = 0;
-
 function openLightbox(event) {
   event.preventDefault();
   const groupName = event.currentTarget.dataset.group;
   currentGroup = Array.from(document.querySelectorAll(`[data-group="${groupName}"]`));
   currentIndex = currentGroup.indexOf(event.currentTarget);
   updateLightbox();
-  document.getElementById('lightbox').classList.remove('hidden');
-}
-
-function updateLightbox() {
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCounter = document.getElementById('lightbox-counter');
-  currentIndex = (currentIndex + currentGroup.length) % currentGroup.length; // wrap around
-  lightboxImg.src = currentGroup[currentIndex].href;
-  lightboxCounter.textContent = `${currentIndex + 1} / ${currentGroup.length}`;
-}
-
-function nextImage(event) {
-  if(event) event.stopPropagation();
-  currentIndex++;
-  updateLightbox();
-}
-
-function prevImage(event) {
-  if(event) event.stopPropagation();
-  currentIndex--;
-  updateLightbox();
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('hidden');
+  lightbox.classList.add('show'); // ✅ add this
 }
 
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.add('hidden');
+  lightbox.classList.remove('show'); // ✅ remove show
 }
 
-// Close when clicking outside image
+
+function updateLightbox() {
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const lightboxCaption = document.getElementById('lightbox-caption'); // ✅ new
+
+  currentIndex = (currentIndex + currentGroup.length) % currentGroup.length; // wrap around
+  const currentLink = currentGroup[currentIndex];
+
+  lightboxImg.src = currentLink.href;
+  lightboxCounter.textContent = `${currentIndex + 1} / ${currentGroup.length}`;
+  lightboxCaption.textContent = currentLink.dataset.caption || ''; // ✅ show caption
+}
+
+function nextImage(event) {
+  if (event) event.stopPropagation();
+  currentIndex++;
+  updateLightbox();
+}
+
+function prevImage(event) {
+  if (event) event.stopPropagation();
+  currentIndex--;
+  updateLightbox();
+}
+
+
+// Image navigation by left/right click
+function imageClickNav(event) {
+  const img = document.getElementById('lightbox-img');
+  const rect = img.getBoundingClientRect();
+  const clickX = event.clientX - rect.left;
+
+  if (clickX < rect.width / 2) {
+    prevImage(event); // Left half → previous
+  } else {
+    nextImage(event); // Right half → next
+  }
+}
+
+// Close button
+document.getElementById('lightbox-close').addEventListener('click', function(e) {
+  e.stopPropagation();
+  closeLightbox();
+});
+
+// Background click (only outside content)
 document.getElementById('lightbox').addEventListener('click', function(e) {
-  if(e.target.id === 'lightbox') closeLightbox();
+  const content = document.getElementById('lightbox-content');
+  if (!content.contains(e.target)) {
+    closeLightbox();
+  }
 });
 
 // Keyboard navigation
 document.addEventListener('keydown', function(e) {
   const lightbox = document.getElementById('lightbox');
-  if(lightbox.classList.contains('hidden')) return;
-  if(e.key === 'ArrowRight') nextImage();
-  if(e.key === 'ArrowLeft') prevImage();
-  if(e.key === 'Escape') closeLightbox();
+  if (lightbox.classList.contains('hidden')) return;
+
+  if (e.key === 'ArrowRight') nextImage();
+  if (e.key === 'ArrowLeft') prevImage();
+  if (e.key === 'Escape') closeLightbox();
 });
+
 </script>
+
+
+
+<!-- Contact -->
+<section id="contact" class="py-16 px-8 text-center">
+  <h3 class="text-3xl font-bold text-red-600 mb-6">Contact Us</h3>
+  <p>Email: <a href="mailto:murderet.improv@gmail.com" class="text-red-600 font-semibold">contact@themurderet.com</a></p>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 text-center py-6">
+  <p>© 2025 The Murderet. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
