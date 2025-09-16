@@ -18,6 +18,14 @@
   transform: scale(1);
 }
 
+.nav-hover {
+  background: rgba(255, 255, 255, 0); /* initially transparent */
+  transition: background 0.2s;
+}
+
+.nav-hover:hover {
+  background: rgba(0, 0, 0, 0.3); /* subtle black overlay on hover */
+}
 
 
 </style>
@@ -300,11 +308,19 @@
     </button>
 
     <!-- Clickable image (splits left/right) -->
-    <img id="lightbox-img" 
-         src="" 
-         alt="Enlarged Photo" 
-         class="max-h-screen max-w-screen w-auto h-auto object-contain rounded-lg shadow-lg cursor-pointer z-30"
-         onclick="imageClickNav(event)">
+    <div id="lightbox-img-wrapper" class="relative w-auto h-auto">
+  <img id="lightbox-img" 
+       src="" 
+       alt="Enlarged Photo" 
+       class="max-h-screen max-w-screen w-auto h-auto object-contain rounded-lg shadow-lg z-30">
+
+  <!-- Left hover rectangle -->
+  <div class="nav-hover left-0 top-0 h-full w-1/4 absolute cursor-pointer z-40" onclick="prevImage(event)"></div>
+
+  <!-- Right hover rectangle -->
+  <div class="nav-hover right-0 top-0 h-full w-1/4 absolute cursor-pointer z-40" onclick="nextImage(event)"></div>
+</div>
+
 
     <!-- Next button -->
     <button onclick="nextImage(event)" 
