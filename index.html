@@ -7,48 +7,35 @@
 <link rel="icon" href="img/Murderet_logo.ico" type="image/x-icon">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <style>
-  /* Optional hover for lightbox images */
-  .hover-scale:hover { transform: scale(1.05); transition: transform 0.3s; }
-
+/* Lightbox animations */
 #lightbox-img {
   transform: scale(0.95);
   transition: all 0.3s ease-in-out;
   max-width: 95vw;
   max-height: 80vh;
-
 }
 #lightbox.show #lightbox-img {
   transform: scale(1);
 }
 
+/* Navigation hover areas */
 .nav-hover {
-  background: rgba(255, 255, 255, 0); /* initially transparent */
+  background: rgba(255, 255, 255, 0);
   transition: background 0.2s;
 }
-
 .nav-hover:hover {
-  background: rgba(0, 0, 0, 0.3); /* subtle black overlay on hover */
+  background: rgba(0, 0, 0, 0.3);
 }
 
-/* Social icon hover effect */
-.social-icon {
-  transition: all 0.3s ease;
-}
+/* General transitions */
+html { scroll-behavior: smooth; }
+.hover-scale:hover { transform: scale(1.05); transition: transform 0.3s; }
+.social-icon { transition: all 0.3s ease; }
+.social-icon:hover { transform: translateY(-3px); }
+.contact-item { transition: all 0.3s ease; }
+.contact-item:hover { transform: scale(1.05); }
 
-.social-icon:hover {
-  transform: translateY(-3px);
-}
-
-.instagram-gradient:hover svg {
-  fill: url(#instagram-gradient);
-}
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Header sticky with backdrop blur */
+/* Header styling */
 header {
   position: sticky;
   top: 0;
@@ -57,38 +44,15 @@ header {
   background: rgba(255, 255, 255, 0.95);
 }
 
-/* Animation for show cards */
+/* Show card animations */
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-.show-card {
-  animation: slideUp 0.5s ease forwards;
-}
-
-/* Contact section styling */
-.contact-item {
-  transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-  transform: scale(1.05);
-}
-
+.show-card { animation: slideUp 0.5s ease forwards; }
 </style>
 </head>
 <body class="bg-white text-gray-900">
-
-
-
-
 
 <!-- Header -->
 <header class="flex justify-between items-center px-8 py-1 shadow">
@@ -105,7 +69,8 @@ header {
     <a href="#contact" class="hover:text-red-600 transition-colors">Contact</a>
   </nav>
 </header>
-<!-- Hero -->
+
+<!-- Hero Section -->
 <section class="bg-gradient-to-r from-red-500 via-red-500 to-red-400 text-white text-center py-24 px-4">
   <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Geneva's murder mystery improv</h2>
   <p class="text-base sm:text-lg mb-6">Murderously entertaining long-form improv and immersive theater</p>
@@ -122,174 +87,126 @@ header {
   </div>
 </section>
 
-<!-- Shows -->
+<!-- Shows Section -->
 <section id="shows" class="py-16 px-8 bg-gray-50">
   <h3 class="text-3xl font-bold text-center text-red-600 mb-10">Our Shows in 2025-2026</h3>
 
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto px-4 sm:px-6">
 
+    <!-- Featured show with special styling -->
+    <a href="https://fetedutheatre.ch/fr/programme/murderet" target="_blank" rel="noopener noreferrer" 
+       class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-xl transform hover:scale-105 transition duration-300 border-2 border-red-500 relative">
+      <div class="relative mb-4">
+        <p class="text-sm text-red-600 font-semibold uppercase tracking-wide inline-block">Fête du Théâtre</p>
+        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full shadow-sm absolute -top-1 -right-0">Fully booked!</span>
+      </div>
+      <h4 class="font-bold text-2xl mb-3">An Improvised Murder Mystery</h4>
+      <p class="text-gray-700 font-semibold mb-1">Saturday 11th of October</p>
+      <p class="text-gray-500 text-sm mb-4">@ Salle Saint-Gervais</p>
+      <span class="text-red-600 text-sm mt-2 inline-block font-semibold hover:underline">Join the waitlist →</span>
+    </a>
 
- <a href="https://fetedutheatre.ch/fr/programme/murderet" target="_blank" rel="noopener noreferrer" 
-   class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-xl transform hover:scale-105 transition duration-300 border-2 border-red-500 relative">
+    <!-- Regular shows -->
+    <a href="https://mqpaquis.ch/events/les-jeudis-de-l-impro-2025-2026/" target="_blank" rel="noopener noreferrer" 
+       class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-xl transform hover:scale-105 transition duration-300">
+      <p class="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-2">Les Jeudis de l'Impro (in English)</p>
+      <h4 class="font-bold text-2xl mb-3">Longform: to be announced</h4>
+      <p class="text-gray-700 font-semibold mb-1">Thursday 20th of November</p>
+      <p class="text-gray-500 text-sm mb-4">@ La Traverse, Maison de Quartier de Paquis</p>
+      <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
+    </a>
 
-  <!-- Festival context with overlapping badge -->
-  <div class="relative mb-4">
-    <p class="text-sm text-red-600 font-semibold uppercase tracking-wide inline-block">Fête du Théâtre</p>
-    <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full shadow-sm absolute -top-1 -right-0">Fully booked!</span>
-  </div>
+    <a href="https://improcomedyclub.ch/" target="_blank" rel="noopener noreferrer" 
+       class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <h4 class="font-bold text-2xl mb-3">Longform: to be announced</h4>
+      <p class="text-gray-700 font-semibold mb-1">Friday 28th of November</p>
+      <p class="text-gray-500 text-sm mb-4">@ Impro Comedy Club</p>
+      <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
+    </a>
 
-  <!-- Show title -->
-  <h4 class="font-bold text-2xl mb-3">An Improvised Murder Mystery</h4>
+    <a href="https://mqpaquis.ch/events/les-jeudis-de-l-impro-2025-2026/" target="_blank" rel="noopener noreferrer" 
+       class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <p class="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-2">Les Jeudis de l'Impro (Eng/Fr)</p>
+      <h4 class="font-bold text-2xl mb-3">Catch Improv with Improthèque</h4>
+      <p class="text-gray-700 font-semibold mb-1">Thursday 15th of January</p>
+      <p class="text-gray-500 text-sm mb-4">@ La Traverse, Maison de Quartier de Paquis</p>
+      <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
+    </a>
 
-  <!-- Date + location -->
-  <p class="text-gray-700 font-semibold mb-1">Saturday 11th of October</p>
-  <p class="text-gray-500 text-sm mb-4">@ Salle Saint-Gervais</p>
+    <a href="https://improcomedyclub.ch/" target="_blank" rel="noopener noreferrer" 
+       class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <h4 class="font-bold text-2xl mb-3">Longform: to be announced</h4>
+      <p class="text-gray-700 font-semibold mb-1">Friday 27th of February</p>
+      <p class="text-gray-500 text-sm mb-4">@ Impro Comedy Club</p>
+      <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
+    </a>
 
-  <!-- CTA -->
-  <span class="text-red-600 text-sm mt-2 inline-block font-semibold hover:underline">Join the waitlist →</span>
-</a>
-
-<a href="https://mqpaquis.ch/events/les-jeudis-de-l-impro-2025-2026/" target="_blank" rel="noopener noreferrer" 
-   class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-xl transform hover:scale-105 transition duration-300">
-
-  <!-- Festival/context -->
-  <p class="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-2">Les Jeudis de l'Impro (in English)</p>
-
-  <!-- Show title -->
-  <h4 class="font-bold text-2xl mb-3">Longform: to be announced</h4>
-
-  <!-- Date + location -->
-  <p class="text-gray-700 font-semibold mb-1">Thursday 20th of November</p>
-  <p class="text-gray-500 text-sm mb-4">@ La Traverse, Maison de Quartier de Paquis</p>
-
-  <!-- CTA -->
-  <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
-</a>
-
-<!-- FUTURE SHOWS: neutral accents -->
-<a href="https://improcomedyclub.ch/" target="_blank" rel="noopener noreferrer" 
-   class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-
-  <!-- Show title -->
-  <h4 class="font-bold text-2xl mb-3">Longform: to be announced</h4>
-
-  <!-- Date + location -->
-  <p class="text-gray-700 font-semibold mb-1">Friday 28th of November</p>
-  <p class="text-gray-500 text-sm mb-4">@ Impro Comedy Club</p>
-
-  <!-- CTA -->
-  <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
-</a>
-
-<a href="https://mqpaquis.ch/events/les-jeudis-de-l-impro-2025-2026/" target="_blank" rel="noopener noreferrer" 
-   class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-
-  <!-- Festival/context -->
-  <p class="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-2">Les Jeudis de l'Impro (Eng/Fr)</p>
-
-  <!-- Show title -->
-  <h4 class="font-bold text-2xl mb-3">Catch Improv with Improthèque</h4>
-
-  <!-- Date + location -->
-  <p class="text-gray-700 font-semibold mb-1">Thursday 15th of January</p>
-  <p class="text-gray-500 text-sm mb-4">@ La Traverse, Maison de Quartier de Paquis</p>
-
-  <!-- CTA -->
-  <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
-</a>
-
-<a href="https://improcomedyclub.ch/" target="_blank" rel="noopener noreferrer" 
-   class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-
-  <!-- Show title -->
-  <h4 class="font-bold text-2xl mb-3">Longform: to be announced</h4>
-
-  <!-- Date + location -->
-  <p class="text-gray-700 font-semibold mb-1">Friday 27th of February</p>
-  <p class="text-gray-500 text-sm mb-4">@ Impro Comedy Club</p>
-
-  <!-- CTA -->
-  <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
-</a>
-
-<a href="https://improcomedyclub.ch/" target="_blank" rel="noopener noreferrer" 
-   class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-
-  <!-- Show title -->
-  <h4 class="font-bold text-2xl mb-3">Longform: to be announced</h4>
-
-  <!-- Date + location -->
-  <p class="text-gray-700 font-semibold mb-1">Friday 24th of April</p>
-  <p class="text-gray-500 text-sm mb-4">@ Impro Comedy Club</p>
-
-  <!-- CTA -->
-  <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
-</a>
-
-
+    <a href="https://improcomedyclub.ch/" target="_blank" rel="noopener noreferrer" 
+       class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <h4 class="font-bold text-2xl mb-3">Longform: to be announced</h4>
+      <p class="text-gray-700 font-semibold mb-1">Friday 24th of April</p>
+      <p class="text-gray-500 text-sm mb-4">@ Impro Comedy Club</p>
+      <span class="text-gray-600 text-sm mt-2 inline-block font-semibold hover:underline">More info →</span>
+    </a>
 
   </div>
 </section>
-
-
-
 
 <!-- About Us Section -->
 <section id="about" class="py-20 max-w-7xl mx-auto px-6">
   <h2 class="text-4xl font-bold text-center mb-12">About Us</h2>
   <p class="text-lg text-center mb-12 max-w-4xl mx-auto">
-  We are The Murderet, Geneva’s English-speaking troupe devoted to murder mystery and long-form improv. 
-  Since 2017, we’ve been cooking up stories where comedy tangles with suspense, using a mix of playful 
-  creativity and storytelling. Along the way, we’ve also strayed into other formats, from fresh spins on 
+  We are The Murderet, Geneva's English-speaking troupe devoted to murder mystery and long-form improv. 
+  Since 2017, we've been cooking up stories where comedy tangles with suspense, using a mix of playful 
+  creativity and storytelling. Along the way, we've also strayed into other formats, from fresh spins on 
   long-form to immersive theatre, always chasing the fun of discovering what might happen next! </p>
 
-<div id="members-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-  <!-- Members -->
-  <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-    <img src="img/people/Christina.jpg" alt="Christina" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
-    <h4 class="font-semibold">Christina</h4>
-    <p class="text-sm text-gray-600">Performer</p>
+  <!-- Team Members Grid -->
+  <div id="members-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Christina.jpg" alt="Christina" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Christina</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Charlotte.png" alt="Charlotte" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Charlotte</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Ivana.jpeg" alt="Ivana" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Ivana</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Arthur.jpg" alt="Arthur" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Arthur</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Emilie.png" alt="Emilie" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Emilie</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Margherita.png" alt="Margherita" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Margherita</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Fredrik.jpeg" alt="Fredrik" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Fredrik</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
   </div>
-  
-  <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-    <img src="img/people/Charlotte.png" alt="Charlotte" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
-    <h4 class="font-semibold">Charlotte</h4>
-    <p class="text-sm text-gray-600">Performer</p>
-  </div>
-  
-  <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-    <img src="img/people/Ivana.jpeg" alt="Ivana" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
-    <h4 class="font-semibold">Ivana</h4>
-    <p class="text-sm text-gray-600">Performer</p>
-  </div>
-  
-  <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-    <img src="img/people/Arthur.jpg" alt="Arthur" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
-    <h4 class="font-semibold">Arthur</h4>
-    <p class="text-sm text-gray-600">Performer</p>
-  </div>
-  
-  <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-    <img src="img/people/Emilie.png" alt="Emilie" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
-    <h4 class="font-semibold">Emilie</h4>
-    <p class="text-sm text-gray-600">Performer</p>
-  </div>
-  
-  <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-    <img src="img/people/Margherita.png" alt="Margherita" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
-    <h4 class="font-semibold">Margherita</h4>
-    <p class="text-sm text-gray-600">Performer</p>
-  </div>
-  
-  <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-    <img src="img/people/Fredrik.jpeg" alt="Fredrik" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
-    <h4 class="font-semibold">Fredrik</h4>
-    <p class="text-sm text-gray-600">Performer</p>
-  </div>
-</div>
 
-
-  <!-- Randomize Members JS -->
+  <!-- Randomize member order on page load -->
   <script>
     const container = document.getElementById('members-container');
     const members = Array.from(container.children);
@@ -306,6 +223,7 @@ header {
   <h3 class="text-3xl font-bold text-center text-red-600 mb-10">Gallery</h3>
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
 
+    <!-- Gallery images with lightbox functionality -->
     <div class="gallery-wrapper">
       <a href="img/FDT-2023_murder_mystery_001.jpg" class="gallery-item" data-group="gallery" data-caption="Magali Girardin - Fête du Théâtre 2023" onclick="openLightbox(event)">
         <img src="img/FDT-2023_murder_mystery_001.jpg" alt="Photo 1" class="rounded-lg shadow h-40 w-full object-cover transform hover:scale-105 transition-transform duration-300">
@@ -364,12 +282,13 @@ header {
 
   </div>
 </section>
+
 <!-- Other Projects Section -->
 <section id="projects" class="py-16 px-8 bg-gray-50">
   <h3 class="text-3xl font-bold text-center text-red-600 mb-10">Other Projects</h3>
   <div class="max-w-5xl mx-auto space-y-6">
 
-    <!-- Project 1 -->
+    <!-- Project items with consistent layout -->
     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
       <a href="img/project_comedie2023.jpg" data-group="projects" data-caption="Photo by John Doe" onclick="openLightbox(event)">
         <img src="img/project_comedie2023.jpg" alt="Cluedo Géant 2023" class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
@@ -382,7 +301,6 @@ header {
       </div>
     </div>
 
-    <!-- Project 2 -->
     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
       <a href="img/project_werewolves2023.jpg" data-group="projects" data-caption="Photo by Viki Lazar" onclick="openLightbox(event)">
         <img src="img/project_werewolves2023.jpg" alt="Werewolves 2023" class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
@@ -395,7 +313,6 @@ header {
       </div>
     </div>
 
-    <!-- Project 3 -->
     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
       <a href="img/project_MAH.jpeg" data-group="projects" data-caption="Photo by John Doe" onclick="openLightbox(event)">
         <img src="img/project_MAH.jpeg" alt="A MAH-tter of Life and Death 2022" class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
@@ -408,7 +325,6 @@ header {
       </div>
     </div>
 
-    <!-- Project 4 -->
     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
       <a href="img/project_dream.png" data-group="projects" data-caption="Photo by Jane Doe" onclick="openLightbox(event)">
         <img src="img/project_dream.png" alt="Dream a Little Dream" class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
@@ -421,7 +337,6 @@ header {
       </div>
     </div>
 
-  <!-- Project 3: Immersive -->
     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
       <a href="img/project_comedie2019.jpg" data-group="projects"  data-caption="Photo by John Doe" onclick="openLightbox(event)">
         <img src="img/project_comedie2019.jpg" alt="Cluedo Géant 2019" class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
@@ -434,7 +349,6 @@ header {
       </div>
     </div>
 
-    <!-- Project 5 -->
     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
       <a href="img/project_retreat2023.jpg" data-group="projects" data-caption="Photo by Arthur Nguyen" onclick="openLightbox(event)">
         <img src="img/project_retreat2023.jpg" alt="Improv Retreat 2023" class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
@@ -449,34 +363,26 @@ header {
 
   </div>
 </section>
+
 <!-- Contact Section -->
 <section id="contact" class="py-12 bg-gray-100">
   <div class="max-w-4xl mx-auto text-center">
     <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
 
     <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-
-      <!-- Email -->
+      <!-- Email Contact -->
       <a href="mailto:murderet.improv@gmail.com"
          class="flex items-center px-6 py-3 bg-white border border-gray-300 rounded-full shadow-sm hover:bg-gray-50 transition max-w-xs mx-auto sm:mx-0">
-        <svg xmlns="http://www.w3.org/2000/svg"
-             fill="none"
-             viewBox="0 0 24 24"
-             stroke="currentColor"
-             class="w-6 h-6 mr-2 text-gray-600">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0L12 13.5 2.25 6.75m19.5 0L12 13.5m0 0L2.25 6.75" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 mr-2 text-gray-600">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0L12 13.5 2.25 6.75m19.5 0L12 13.5m0 0L2.25 6.75" />
         </svg>
         murderet.improv@gmail.com
       </a>
 
-      <!-- Instagram -->
+      <!-- Instagram Contact -->
       <a href="https://instagram.com/the_murderet_geneva" target="_blank"
          class="flex items-center px-6 py-3 bg-white border border-gray-300 rounded-full shadow-sm hover:bg-gray-50 transition max-w-xs mx-auto sm:mx-0">
-        <svg xmlns="http://www.w3.org/2000/svg"
-             fill="currentColor"
-             viewBox="0 0 24 24"
-             class="w-6 h-6 mr-2 text-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 mr-2 text-gray-600">
           <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM20.5 7.75v8.5c0 2.35-1.9 4.25-4.25 4.25h-8.5c-2.35 0-4.25-1.9-4.25-4.25v-8.5c0-2.35 1.9-4.25 4.25-4.25h8.5c2.35 0 4.25 1.9 4.25 4.25Zm-8.5-.5a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5Zm0 8.5a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5Zm5.75-9.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Z"/>
         </svg>
         @the_murderet_geneva
@@ -486,46 +392,38 @@ header {
   </div>
 </section>
 
-
 <!-- Footer -->
 <footer class="bg-gray-900 text-gray-300 text-center py-6">
   <p>© 2025 The Murderet. All Rights Reserved.</p>
 </footer>
 
-
-<!-- Lightbox -->
+<!-- Lightbox Modal -->
 <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center">
   
   <!-- Close button -->
-  <span id="lightbox-close" 
-        class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-red-500 z-50">
+  <span id="lightbox-close" class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-red-500 z-50">
     &times;
   </span>
 
-  <!-- Content wrapper -->
-  <div id="lightbox-content" 
-       class="relative flex items-center justify-center max-w-screen max-h-screen">
+  <!-- Content wrapper with navigation -->
+  <div id="lightbox-content" class="relative flex items-center justify-center max-w-screen max-h-screen">
     
-    <!-- Prev button -->
+    <!-- Previous button -->
     <button onclick="prevImage(event)" 
       class="absolute left-2 md:left-6 text-white text-4xl bg-black bg-opacity-40 hover:bg-opacity-70 rounded-full p-3 z-40">
       &#10094;
     </button>
 
-    <!-- Clickable image (splits left/right) -->
+    <!-- Image with navigation areas -->
     <div id="lightbox-img-wrapper" class="relative w-auto h-auto">
-  <img id="lightbox-img" 
-       src="" 
-       alt="Enlarged Photo" 
-       class="max-h-screen max-w-screen w-auto h-auto object-contain rounded-lg shadow-lg z-30">
+      <img id="lightbox-img" src="" alt="Enlarged Photo" class="max-h-screen max-w-screen w-auto h-auto object-contain rounded-lg shadow-lg z-30">
 
-  <!-- Left hover rectangle -->
-  <div class="nav-hover left-0 top-0 h-full w-1/4 absolute cursor-pointer z-40" onclick="prevImage(event)"></div>
+      <!-- Left click area for previous -->
+      <div class="nav-hover left-0 top-0 h-full w-1/4 absolute cursor-pointer z-40" onclick="prevImage(event)"></div>
 
-  <!-- Right hover rectangle -->
-  <div class="nav-hover right-0 top-0 h-full w-1/4 absolute cursor-pointer z-40" onclick="nextImage(event)"></div>
-</div>
-
+      <!-- Right click area for next -->
+      <div class="nav-hover right-0 top-0 h-full w-1/4 absolute cursor-pointer z-40" onclick="nextImage(event)"></div>
+    </div>
 
     <!-- Next button -->
     <button onclick="nextImage(event)" 
@@ -533,22 +431,20 @@ header {
       &#10095;
     </button>
 
-    <!-- Counter -->
-<div class="absolute bottom-16 text-white text-lg bg-black bg-opacity-50 px-3 py-1 rounded z-40">
-  <span id="lightbox-counter"></span>
-</div>
+    <!-- Image counter -->
+    <div class="absolute bottom-16 text-white text-lg bg-black bg-opacity-50 px-3 py-1 rounded z-40">
+      <span id="lightbox-counter"></span>
+    </div>
 
-<!-- Caption -->
-<div id="lightbox-caption" class="absolute bottom-6 text-white text-center bg-black bg-opacity-50 px-3 py-1 rounded z-40 max-w-xl mx-auto left-0 right-0"></div>
+    <!-- Image caption -->
+    <div id="lightbox-caption" class="absolute bottom-6 text-white text-center bg-black bg-opacity-50 px-3 py-1 rounded z-40 max-w-xl mx-auto left-0 right-0"></div>
 
   </div>
 </div>
 
-
-
-
-
-  <script>
+<!-- JavaScript -->
+<script>
+// Lightbox functionality
 let currentGroup = [];
 let currentIndex = 0;
 
@@ -586,6 +482,7 @@ function prevImage(event) {
   updateLightbox();
 }
 
+// Close lightbox events
 document.getElementById('lightbox-close').addEventListener('click', () => {
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.add('hidden');
@@ -612,7 +509,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 </script>
-
 
 </body>
 </html>
