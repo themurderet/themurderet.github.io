@@ -57,34 +57,16 @@ header {
 <!-- Header -->
 <header class="flex justify-between items-center px-8 py-1 shadow">
   <div class="flex items-center space-x-3">
-    <img src="img/Murderet_logo.png" alt="The Murderet Logo" class="w-auto h-24">
+    <div class="flex items-center justify-center">
+      <img src="img/Murderet_logo.png" alt="The Murderet Logo" class="w-auto h-24">
+    </div>
   </div>
-  
-  <!-- Mobile menu button -->
-  <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-red-600 transition-colors">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-  </button>
-  
-  <!-- Desktop navigation -->
-  <nav class="hidden md:flex space-x-6 font-medium">
-    <a href="#shows" class="hover:text-red-600 transition-colors">Shows</a>
+  <nav class="space-x-6 font-medium">
+     <a href="#shows" class="hover:text-red-600 transition-colors">Shows</a>
     <a href="#about" class="hover:text-red-600 transition-colors">About</a>
     <a href="#gallery" class="hover:text-red-600 transition-colors">Gallery</a>
     <a href="#projects" class="hover:text-red-600 transition-colors">Projects</a>
     <a href="#contact" class="hover:text-red-600 transition-colors">Contact</a>
-  </nav>
-  
-  <!-- Mobile navigation -->
-  <nav id="mobile-menu" class="absolute top-full left-0 right-0 bg-white shadow-lg hidden md:hidden">
-    <div class="flex flex-col py-4">
-      <a href="#shows" class="px-8 py-3 hover:bg-gray-50 hover:text-red-600 transition-colors">Shows</a>
-      <a href="#about" class="px-8 py-3 hover:bg-gray-50 hover:text-red-600 transition-colors">About</a>
-      <a href="#gallery" class="px-8 py-3 hover:bg-gray-50 hover:text-red-600 transition-colors">Gallery</a>
-      <a href="#projects" class="px-8 py-3 hover:bg-gray-50 hover:text-red-600 transition-colors">Projects</a>
-      <a href="#contact" class="px-8 py-3 hover:bg-gray-50 hover:text-red-600 transition-colors">Contact</a>
-    </div>
   </nav>
 </header>
 
@@ -524,29 +506,6 @@ document.addEventListener('keydown', (e) => {
       lightbox.classList.add('hidden');
       lightbox.classList.remove('show');
     }
-  }
-});
-
-// Mobile menu functionality
-document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-  const mobileMenu = document.getElementById('mobile-menu');
-  mobileMenu.classList.toggle('hidden');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.add('hidden');
-  });
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  
-  if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-    mobileMenu.classList.add('hidden');
   }
 });
 </script>
