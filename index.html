@@ -13,6 +13,9 @@
 #lightbox-img {
   transform: scale(0.95);
   transition: all 0.3s ease-in-out;
+  max-width: 95vw;
+  max-height: 80vh;
+
 }
 #lightbox.show #lightbox-img {
   transform: scale(1);
@@ -83,18 +86,10 @@ header {
 </head>
 <body class="bg-white text-gray-900">
 
-<!-- SVG Definitions for Instagram gradient -->
-<svg width="0" height="0">
-  <defs>
-    <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f09433" />
-      <stop offset="25%" stop-color="#e6683c" />
-      <stop offset="50%" stop-color="#dc2743" />
-      <stop offset="75%" stop-color="#cc2366" />
-      <stop offset="100%" stop-color="#bc1888" />
-    </linearGradient>
-  </defs>
-</svg>
+
+   
+
+
 
 <!-- Header -->
 <header class="flex justify-between items-center px-8 py-1 shadow">
@@ -111,11 +106,10 @@ header {
     <a href="#contact" class="hover:text-red-600 transition-colors">Contact</a>
   </nav>
 </header>
-
 <!-- Hero -->
 <section class="bg-gradient-to-r from-red-500 via-red-500 to-red-400 text-white text-center py-24 px-4">
-  <h2 class="text-5xl font-extrabold mb-4">Geneva's murder mystery improv</h2>
-  <p class="max-w-2xl mx-auto text-lg mb-6">Murderously entertaining long-form improv and immersive theater</p>
+  <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Geneva's murder mystery improv</h2>
+  <p class="text-base sm:text-lg mb-6">Murderously entertaining long-form improv and immersive theater</p>
   
   <!-- Next Show Alert -->
   <div class="bg-white bg-opacity-20 backdrop-blur rounded-lg px-6 py-3 inline-block mb-8">
@@ -133,7 +127,8 @@ header {
 <section id="shows" class="py-16 px-8 bg-gray-50">
   <h3 class="text-3xl font-bold text-center text-red-600 mb-10">Our Shows in 2025-2026</h3>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto px-4 sm:px-6">
+
 
  <a href="https://fetedutheatre.ch/fr/programme/murderet" target="_blank" rel="noopener noreferrer" 
    class="show-card block p-6 bg-white rounded-lg shadow hover:shadow-xl transform hover:scale-105 transition duration-300 border-2 border-red-500 relative">
@@ -249,7 +244,7 @@ header {
   creativity and storytelling. Along the way, we’ve also strayed into other formats, from fresh spins on 
   long-form to immersive theatre, always chasing the fun of discovering what might happen next! </p>
 
-<div id="members-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+<div id="members-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
   <!-- Members -->
   <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
     <img src="img/people/Christina.jpg" alt="Christina" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
@@ -621,3 +616,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 </script>
+
+
+</body>
+</html>
