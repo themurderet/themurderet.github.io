@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About The Murderet - Geneva Improv</title>
+<meta name="description" content="Learn more about The Murderet, Geneva's English-speaking murder mystery improv troupe.">
+<link rel="icon" href="img/Murderet_ico.ico" type="image/x-icon">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-gray-900">
+
+<!-- Header Placeholder -->
+<div id="header-placeholder"></div>
+
+<!-- Top Banner / Hero Strip -->
+<section class="bg-gradient-to-r from-red-500 via-red-500 to-red-400 text-white text-center py-14 px-4">
+  <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2">Geneva's murder mystery improv</h1>
+  <p class="text-lg sm:text-xl">Murderously entertaining long-form improv and immersive theater</p>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-16 max-w-5xl mx-auto px-6">
+  <!-- About Text -->
+  <div class="text-center mb-12 max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold mb-6">About Us</h2>
+    
+    <p class="text-lg">
+      We are The Murderet, Geneva's English-speaking troupe devoted to murder mystery and long-form improv. 
+      Since 2017, we've been crafting stories where comedy tangles with suspense, exploring long-form formats 
+      and immersive theater, always chasing the fun of discovering what might happen next!
+    </p>
+        <!-- Group Photo -->
+  <div class="mt-12 text-center">
+    <img src="img/group-dinner.jpg" 
+         alt="The Murderet Group Photo" 
+         class="w-full h-auto max-w-4xl mx-auto rounded-lg shadow-2xl">
+  </div>
+  </div>
+
+
+
+  <!-- Team Members Grid -->
+  <div id="members-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Christina.webp" alt="Christina" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Christina</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Charlotte.webp" alt="Charlotte" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Charlotte</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Ivana.webp" alt="Ivana" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Ivana</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Arthur.webp" alt="Arthur" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Arthur</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Emilie.webp" alt="Emilie" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Emilie</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Margherita.webp" alt="Margherita" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Margherita</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+    <div class="member bg-gray-100 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
+      <img src="img/people/Fredrik.webp" alt="Fredrik" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+      <h4 class="font-semibold">Fredrik</h4>
+      <p class="text-sm text-gray-600">Performer</p>
+    </div>
+  </div>
+
+  <!-- Randomize member order -->
+  <script>
+    const container = document.getElementById('members-container');
+    const members = Array.from(container.children);
+    for (let i = members.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [members[i], members[j]] = [members[j], members[i]];
+    }
+    members.forEach(member => container.appendChild(member));
+  </script>
+
+
+
+  <!-- Code of Conduct -->
+  <div class="mt-16 max-w-3xl mx-auto text-center bg-gray-50 p-6 rounded-lg shadow">
+    <h3 class="text-2xl font-semibold mb-4">Code of Conduct</h3>
+    <p class="text-gray-700">
+      We strive to maintain a welcoming, safe, and respectful environment for all performers, collaborators, 
+      and audience members. Harassment and discrimination of any kind will not be tolerated.
+ </p><p>
+      (Full live document in progress!)
+    </p>
+  </div>
+</section>
+
+<!-- Contact Placeholder -->
+<div id="contact-placeholder"></div>
+
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
+<!-- Scripts -->
+<script src="js/components.js"></script>
+</body>
+</html>

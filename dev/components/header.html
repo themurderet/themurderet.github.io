@@ -1,0 +1,56 @@
+<!-- Header Component -->
+<header class="sticky top-0 z-50 bg-white shadow-md">
+  <div class="flex justify-between items-center px-8 py-1">
+    <a href="index.html" class="flex items-center">
+      <img src="img/Murderet_logo.png" alt="The Murderet Logo" class="w-auto h-24">
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 font-medium">
+      <a href="index.html#upcoming" class="hover:text-red-600 transition-colors">Upcoming</a>
+      <a href="index.html#formats" class="hover:text-red-600 transition-colors">Our Shows</a>
+      <a href="about.html" class="hover:text-red-600 transition-colors">About</a>
+      <a href="projects.html" class="hover:text-red-600 transition-colors">Projects</a>
+      <a href="index.html#contact" class="hover:text-red-600 transition-colors">Contact</a>
+    </nav>
+    
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile Navigation -->
+  <nav id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+    <div class="px-4 py-3 space-y-2">
+      <a href="index.html#upcoming" class="block py-2 hover:text-red-600 transition-colors">Upcoming</a>
+      <a href="index.html#formats" class="block py-2 hover:text-red-600 transition-colors">Our Shows</a>
+      <a href="about.html" class="block py-2 hover:text-red-600 transition-colors">About</a>
+      <a href="projects.html" class="block py-2 hover:text-red-600 transition-colors">Projects</a>
+      <a href="index.html#contact" class="block py-2 hover:text-red-600 transition-colors">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+});
+</script>

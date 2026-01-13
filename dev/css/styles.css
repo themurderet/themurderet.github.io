@@ -1,0 +1,88 @@
+/* ===== GENERAL STYLES ===== */
+html { 
+  scroll-behavior: smooth; 
+  scroll-padding-top: 7rem; /* Adjusted to match header height */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* ===== HEADER STYLES ===== */
+header {
+  position: sticky !important; /* Force sticky */
+  top: 0 !important;
+  z-index: 9999 !important; /* Much higher to ensure it stays on top */
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure header placeholder doesn't interfere */
+#header-placeholder {
+  position: static !important;
+  display: contents;
+}
+
+/* ===== LIGHTBOX ===== */
+#lightbox-img {
+  transform: scale(0.95);
+  transition: all 0.3s ease-in-out;
+  max-width: 95vw;
+  max-height: 80vh;
+}
+
+#lightbox.show #lightbox-img {
+  transform: scale(1);
+}
+
+/* Navigation hover areas */
+.nav-hover {
+  background: rgba(255, 255, 255, 0);
+  transition: background 0.2s;
+}
+
+.nav-hover:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.show-card { 
+  animation: slideUp 0.5s ease forwards; 
+}
+
+/* ===== COMPONENT TRANSITIONS ===== */
+/* =====
+.hover-scale:hover { 
+  transform: scale(1.05); 
+  transition: transform 0.3s; 
+}===== */
+
+#back-to-top {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#back-to-top.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
