@@ -86,3 +86,32 @@ header {
   pointer-events: none;
   transform: translateY(20px);
 }
+
+/* Mobile menu slide down/up */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+#mobile-menu.open {
+  max-height: 500px; /* adjust if menu has more links */
+}
+
+/* Hamburger rotation */
+#mobile-menu-btn.open svg {
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+}
+
+/* Optional: fade in links */
+#mobile-menu a {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#mobile-menu.open a {
+  opacity: 1;
+  transform: translateY(0);
+}

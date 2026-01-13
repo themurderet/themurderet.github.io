@@ -94,19 +94,37 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadComponent('header-placeholder', 'components/header.html');
   await loadComponent('contact-placeholder', 'components/contact.html');
   await loadComponent('footer-placeholder', 'components/footer.html');
-  
+
   const lightboxPlaceholder = document.getElementById('lightbox-placeholder');
   if (lightboxPlaceholder) {
     await loadComponent('lightbox-placeholder', 'components/lightbox.html');
   }
-  
+
   // Load back to top button
   const backToTopPlaceholder = document.getElementById('back-to-top-placeholder');
   if (backToTopPlaceholder) {
     await loadComponent('back-to-top-placeholder', 'components/back-to-top.html');
     initBackToTop();
   }
-  
+
   bindNavLinks();
   scrollToHashOnLoad();
+
+  // ==================== Mobile Menu Enhancement ====================
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');         // slide down/up
+      mobileMenuBtn.classList.toggle('open');      // hamburger rotate
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileMenuBtn.classList.remove('open');
+      });
+    });
+  }
 });
