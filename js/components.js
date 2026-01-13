@@ -9,6 +9,111 @@ async function loadComponent(elementId, componentPath) {
   }
 }
 
+// ==================== Lightbox ====================
+let currentGroup = [];
+let currentIndex = 0;
+
+function openLightbox(event) {
+  event.preventDefault();
+  
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) {
+    console.error('Lightbox not found! Make sure lightbox component is loaded.');
+    return;
+  }
+  
+  const groupName = event.currentTarget.dataset.group;
+  currentGroup = Array.from(document.querySelectorAll(`[data-group="${groupName}"]`));
+  currentIndex = currentGroup.indexOf(event.currentTarget);
+  
+  console.log('Opening lightbox:', { groupName, currentIndex, totalImages: currentGroup.length });
+  
+  updateLightbox();
+  lightbox.classList.remove('hidden');
+  lightbox.classList.add('show');
+}
+
+function updateLightbox() {
+  const item = currentGroup[currentIndex];
+  const img = document.getElementById('lightbox-img');
+  const caption = document.getElementById('lightbox-caption');
+  const counter = document.getElementById('lightbox-counter');
+
+  console.log('Updating lightbox:', { 
+    img: !!img, 
+    caption: !!caption, 
+    counter: !!counter,
+    src: item?.getAttribute('href')
+  });
+
+  if (!img) {
+    console.error('lightbox-img element not found!');
+    return;
+  }
+
+  img.src = item.getAttribute('href');
+  if (caption) caption.textContent = item.dataset.caption || "";
+  if (counter) counter.textContent = `${currentIndex + 1} / ${currentGroup.length}`;
+}
+
+function nextImage(event) {
+  event.stopPropagation();
+  currentIndex = (currentIndex + 1) % currentGroup.length;
+  updateLightbox();
+}
+
+function prevImage(event) {
+  event.stopPropagation();
+  currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length;
+  updateLightbox();
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('show');
+  }
+}
+
+function initLightbox() {
+  const closeBtn = document.getElementById('lightbox-close');
+  const lightbox = document.getElementById('lightbox');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  
+  if (!closeBtn || !lightbox) {
+    console.error('Lightbox elements not found');
+    return;
+  }
+
+  // Remove any existing listeners by cloning elements
+  const newCloseBtn = closeBtn.cloneNode(true);
+  closeBtn.parentNode.replaceChild(newCloseBtn, closeBtn);
+  
+  newCloseBtn.addEventListener('click', closeLightbox);
+
+  if (prevBtn) {
+    const newPrevBtn = prevBtn.cloneNode(true);
+    prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+    newPrevBtn.addEventListener('click', prevImage);
+  }
+
+  if (nextBtn) {
+    const newNextBtn = nextBtn.cloneNode(true);
+    nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+    newNextBtn.addEventListener('click', nextImage);
+  }
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') {
+      closeLightbox();
+    }
+  });
+
+  console.log('Lightbox initialized successfully');
+}
+
 // ==================== Smooth Scroll ====================
 function smoothScrollTo(elementId) {
   const target = document.getElementById(elementId);
@@ -16,7 +121,7 @@ function smoothScrollTo(elementId) {
   
   const header = document.querySelector('header');
   const headerHeight = header ? header.offsetHeight : 0;
-  const extraPadding = -30; // Negative value scrolls higher
+  const extraPadding = -30;
   const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraPadding;
   
   window.scrollTo({ top: targetPosition, behavior: 'smooth' });
@@ -32,14 +137,11 @@ function handleNavClick(e) {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const targetPage = path.split('/').pop() || 'index.html';
   
-  // Same page navigation - scroll smoothly
   if (!path || targetPage === currentPage) {
     e.preventDefault();
     smoothScrollTo(hash);
     history.pushState(null, '', '#' + hash);
   }
-  // Cross-page navigation - let browser navigate, then scroll on load
-  // (handled by scrollToHashOnLoad)
 }
 
 function bindNavLinks() {
@@ -54,10 +156,9 @@ function scrollToHashOnLoad() {
     const target = document.getElementById(hash);
     if (!target) return;
     
-    // Jump directly without animation when arriving from external page
     const header = document.querySelector('header');
     const headerHeight = header ? header.offsetHeight : 0;
-    const extraPadding = -30; // Negative value scrolls higher
+    const extraPadding = -30;
     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraPadding;
     
     window.scrollTo({ top: targetPosition, behavior: 'auto' });
@@ -69,7 +170,6 @@ function initBackToTop() {
   const backToTopBtn = document.getElementById('back-to-top');
   if (!backToTopBtn) return;
   
-  // Show/hide based on scroll position
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const windowHeight = window.innerHeight;
@@ -83,11 +183,20 @@ function initBackToTop() {
     }
   });
   
-  // Scroll to top on click
   backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+// ==================== Keyboard Navigation ====================
+document.addEventListener('keydown', (e) => {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox && lightbox.classList.contains('show')) {
+    if (e.key === 'ArrowRight') nextImage(e);
+    if (e.key === 'ArrowLeft') prevImage(e);
+    if (e.key === 'Escape') closeLightbox();
+  }
+});
 
 // ==================== Initialize ====================
 document.addEventListener('DOMContentLoaded', async () => {
@@ -98,9 +207,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   const lightboxPlaceholder = document.getElementById('lightbox-placeholder');
   if (lightboxPlaceholder) {
     await loadComponent('lightbox-placeholder', 'components/lightbox.html');
+    // Wait a bit for DOM to settle, then initialize
+    setTimeout(() => {
+      initLightbox();
+    }, 100);
   }
 
-  // Load back to top button
   const backToTopPlaceholder = document.getElementById('back-to-top-placeholder');
   if (backToTopPlaceholder) {
     await loadComponent('back-to-top-placeholder', 'components/back-to-top.html');
@@ -116,8 +228,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');         // slide down/up
-      mobileMenuBtn.classList.toggle('open');      // hamburger rotate
+      mobileMenu.classList.toggle('open');
+      mobileMenuBtn.classList.toggle('open');
     });
 
     mobileMenu.querySelectorAll('a').forEach(link => {
