@@ -41,19 +41,20 @@ function updateLightbox() {
   const caption = document.getElementById('lightbox-caption');
   const counter = document.getElementById('lightbox-counter');
 
+  if (!item || !img) {
+    console.error('Lightbox update failed:', { item, img });
+    return;
+  }
+
   console.log('Updating lightbox:', { 
     img: !!img, 
     caption: !!caption, 
     counter: !!counter,
-    src: item?.getAttribute('href')
+    src: item.dataset.src || item.getAttribute('href')
   });
 
-  if (!img) {
-    console.error('lightbox-img element not found!');
-    return;
-  }
+img.src = item.dataset.src || item.getAttribute('href');
 
-  img.src = item.getAttribute('href');
   if (caption) caption.textContent = item.dataset.caption || "";
   if (counter) counter.textContent = `${currentIndex + 1} / ${currentGroup.length}`;
 }
