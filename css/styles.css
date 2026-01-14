@@ -90,12 +90,14 @@ header {
 /* Mobile menu slide down/up */
 #mobile-menu {
   max-height: 0;
-  overflow: open;
+  overflow: hidden;
+  pointer-events: none;
   transition: max-height 0.3s ease-out;
 }
 
 #mobile-menu.open {
   max-height: 500px; /* adjust if menu has more links */
+  pointer-events: auto;
 }
 
 /* Hamburger rotation */
@@ -114,4 +116,8 @@ header {
 #mobile-menu.open a {
   opacity: 1;
   transform: translateY(0);
+}
+
+.gallery-item {
+  touch-action: manipulation;
 }

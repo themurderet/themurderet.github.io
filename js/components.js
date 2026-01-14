@@ -15,6 +15,8 @@ let currentIndex = 0;
 
 function openLightbox(event) {
   event.preventDefault();
+  event.stopPropagation();   
+  event.stopImmediatePropagation();
   
   const lightbox = document.getElementById('lightbox');
   if (!lightbox) {
