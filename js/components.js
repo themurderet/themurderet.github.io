@@ -114,6 +114,39 @@ function initLightbox() {
   console.log('Lightbox initialized successfully');
 }
 
+// ==================== Mobile Menu ====================
+function initMobileMenu() {
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (!mobileMenuBtn || !mobileMenu) {
+    console.log('Mobile menu elements not found');
+    return;
+  }
+
+  // Remove existing event listeners by cloning
+  const newBtn = mobileMenuBtn.cloneNode(true);
+  mobileMenuBtn.parentNode.replaceChild(newBtn, mobileMenuBtn);
+
+  newBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    mobileMenu.classList.toggle('open');
+    newBtn.classList.toggle('open');
+    console.log('Menu toggled:', mobileMenu.classList.contains('open'));
+  });
+
+  // Close menu when clicking links
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      newBtn.classList.remove('open');
+    });
+  });
+
+  console.log('Mobile menu initialized successfully');
+}
+
 // ==================== Smooth Scroll ====================
 function smoothScrollTo(elementId) {
   const target = document.getElementById(elementId);
@@ -200,14 +233,21 @@ document.addEventListener('keydown', (e) => {
 
 // ==================== Initialize ====================
 document.addEventListener('DOMContentLoaded', async () => {
+  // Load header first and wait for it
   await loadComponent('header-placeholder', 'components/header.html');
+  
+  // Initialize mobile menu after header is loaded
+  setTimeout(() => {
+    initMobileMenu();
+  }, 100);
+
+  // Load other components
   await loadComponent('contact-placeholder', 'components/contact.html');
   await loadComponent('footer-placeholder', 'components/footer.html');
 
   const lightboxPlaceholder = document.getElementById('lightbox-placeholder');
   if (lightboxPlaceholder) {
     await loadComponent('lightbox-placeholder', 'components/lightbox.html');
-    // Wait a bit for DOM to settle, then initialize
     setTimeout(() => {
       initLightbox();
     }, 100);
@@ -221,22 +261,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   bindNavLinks();
   scrollToHashOnLoad();
-
-  // ==================== Mobile Menu Enhancement ====================
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      mobileMenuBtn.classList.toggle('open');
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        mobileMenuBtn.classList.remove('open');
-      });
-    });
-  }
 });

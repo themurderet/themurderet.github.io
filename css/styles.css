@@ -90,7 +90,7 @@ header {
 /* Mobile menu slide down/up */
 #mobile-menu {
   max-height: 0;
-  overflow: hidden;
+  overflow: open;
   transition: max-height 0.3s ease-out;
 }
 
