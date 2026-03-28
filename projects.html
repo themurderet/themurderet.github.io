@@ -35,7 +35,18 @@
   <!-- Other Projects Section -->
 <section id="projects" class="py-16 px-8 bg-gray-50">
   <h3 class="text-3xl font-bold text-center text-red-600 mb-10">Featured Projects</h3>
-  <div class="max-w-5xl mx-auto space-y-6">
+
+    <div class="max-w-5xl mx-auto space-y-6">
+    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+      <button type="button" data-src="img/workshops_Laura.png" data-group="projects" onclick="openLightbox(event)">
+        <img src="img/workshops_Laura.png" alt="Workshop with Laura Maynard" class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg shadow hover:scale-105 transition-transform duration-300">
+      </button>
+      <div class="flex-1 text-center sm:text-left">
+        <span class="inline-block bg-yellow-300 text-white text-xs px-2 py-1 rounded mb-2">Community</span>
+        <h4 class="font-bold text-xl mb-1">Workshop Weekend with Laura Maynard (2025)</h4>
+        <p class="text-gray-600">3 workshops and a community jam for all levels. Guest instructor from Boom Chicago (Amsterdam).</p>
+      </div>
+    </div>
 
     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
       <button type="button" data-src="img/Murderet_logo.png" data-group="projects" data-caption="Photo by John Doe" onclick="openLightbox(event)">
