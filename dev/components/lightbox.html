@@ -1,0 +1,44 @@
+<!-- Lightbox Modal Component -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center">
+  
+  <!-- Close button -->
+  <span id="lightbox-close" class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-red-500 z-50">
+    &times;
+  </span>
+
+  <!-- Content wrapper with navigation -->
+  <div id="lightbox-content" class="relative flex items-center justify-center max-w-screen max-h-screen">
+    
+    <!-- Previous button -->
+    <button onclick="prevImage(event)" 
+      class="absolute left-2 md:left-6 text-white text-4xl bg-black bg-opacity-40 hover:bg-opacity-70 rounded-full p-3 z-40">
+      &#10094;
+    </button>
+
+    <!-- Image with navigation areas -->
+    <div id="lightbox-img-wrapper" class="relative w-auto h-auto">
+      <img id="lightbox-img" src="" alt="Enlarged Photo" class="max-h-screen max-w-screen w-auto h-auto object-contain rounded-lg shadow-lg z-30">
+
+      <!-- Left click area for previous -->
+      <div class="nav-hover left-0 top-0 h-full w-1/4 absolute cursor-pointer z-40" onclick="prevImage(event)"></div>
+
+      <!-- Right click area for next -->
+      <div class="nav-hover right-0 top-0 h-full w-1/4 absolute cursor-pointer z-40" onclick="nextImage(event)"></div>
+    </div>
+
+    <!-- Next button -->
+    <button onclick="nextImage(event)" 
+      class="absolute right-2 md:right-6 text-white text-4xl bg-black bg-opacity-40 hover:bg-opacity-70 rounded-full p-3 z-40">
+      &#10095;
+    </button>
+
+    <!-- Image counter -->
+    <div class="absolute bottom-16 text-white text-lg bg-black bg-opacity-50 px-3 py-1 rounded z-40">
+      <span id="lightbox-counter"></span>
+    </div>
+
+    <!-- Image caption -->
+    <div id="lightbox-caption" class="absolute bottom-6 text-white text-center bg-black bg-opacity-50 px-3 py-1 rounded z-40 max-w-xl mx-auto left-0 right-0"></div>
+
+  </div>
+</div>
