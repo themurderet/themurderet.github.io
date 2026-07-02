@@ -10,7 +10,7 @@ async function loadComponent(elementId, componentPath) {
 }
 
 // ==================== Newsletter js from Sender ====================
-function (s, e, n, d, er) {
+(function (s, e, n, d, er) {
     s['Sender'] = er;
     s[er] = s[er] || function () {
       (s[er].q = s[er].q || []).push(arguments)
@@ -24,7 +24,7 @@ function (s, e, n, d, er) {
     a.async = 1;
     a.src = d;
     m.parentNode.insertBefore(a, m)
-  }(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+  })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
   sender('3d72c6e7c77203')
 
 // ==================== Lightbox ====================
